@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEBCAPHE3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Calamviec">
+    <Key>
+      <PropertyRef Name="Maca" />
+    </Key>
+    <Property Name="Maca" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tienca" Type="Double" />
+    <Property Name="TGbatdau" Type="Time" Precision="7" />
+    <Property Name="TGKThuc" Type="Time" Precision="7" />
+    <NavigationProperty Name="Chitietcalam" Relationship="Self.FK_CHITIETCALAM_CALAM" FromRole="Calamviec" ToRole="Chitietcalam" />
+  </EntityType>
+  <EntityType Name="Chitietcalam">
+    <Key>
+      <PropertyRef Name="MaNV" />
+      <PropertyRef Name="Maca" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Maca" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Calamviec" Relationship="Self.FK_CHITIETCALAM_CALAM" FromRole="Chitietcalam" ToRole="Calamviec" />
+  </EntityType>
+  <EntityType Name="douong">
+    <Key>
+      <PropertyRef Name="Madouong" />
+    </Key>
+    <Property Name="Tendouong" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Madouong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dongiaban" Type="Double" />
+    <Property Name="Anh" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="Dongianhap" Type="Double" />
+    <Property Name="Mota" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Trongluong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Maloai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hoadonban">
+    <Key>
+      <PropertyRef Name="SoHDB" />
+    </Key>
+    <Property Name="SoHDB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ngayban" Type="DateTime" Precision="3" />
+    <Property Name="MaNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Khachhang" Relationship="Self.FK_hoadonban_khachhang" FromRole="Hoadonban" ToRole="Khachhang" />
+  </EntityType>
+  <EntityType Name="HoaDonNhap">
+    <Key>
+      <PropertyRef Name="SoHDN" />
+    </Key>
+    <Property Name="SoHDN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayNhap" Type="DateTime" Precision="3" />
+    <Property Name="MaNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Nhacungcap" Relationship="Self.FK_HOADONNHAP_NHACUNGCAP" FromRole="HoaDonNhap" ToRole="Nhacungcap" />
+  </EntityType>
+  <EntityType Name="Khachhang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hoadonban" Relationship="Self.FK_hoadonban_khachhang" FromRole="Khachhang" ToRole="Hoadonban" />
+  </EntityType>
+  <EntityType Name="Loaidouong">
+    <Key>
+      <PropertyRef Name="Maloai" />
+    </Key>
+    <Property Name="Maloai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tenloai" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Nhacungcap">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNCC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDonNhap" Relationship="Self.FK_HOADONNHAP_NHACUNGCAP" FromRole="Nhacungcap" ToRole="HoaDonNhap" />
+  </EntityType>
+  <EntityType Name="Nhanvien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="TenNV" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
+    <Property Name="Diachi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User_khach">
+    <Key>
+      <PropertyRef Name="taikhoan" />
+    </Key>
+    <Property Name="taikhoan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="matkhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="passWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="access" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ChitietHDB">
+    <Key>
+      <PropertyRef Name="Madouong" />
+      <PropertyRef Name="SoHDB" />
+    </Key>
+    <Property Name="Khuyenmai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SLB" Type="Int32" />
+    <Property Name="Madouong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoHDB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChiTietHDN">
+    <Key>
+      <PropertyRef Name="Madouong" />
+      <PropertyRef Name="SoHDN" />
+    </Key>
+    <Property Name="SLNhap" Type="Int32" />
+    <Property Name="Madouong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoHDN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CHITIETCALAM_CALAM">
+    <End Role="Calamviec" Type="Self.Calamviec" Multiplicity="1" />
+    <End Role="Chitietcalam" Type="Self.Chitietcalam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Calamviec">
+        <PropertyRef Name="Maca" />
+      </Principal>
+      <Dependent Role="Chitietcalam">
+        <PropertyRef Name="Maca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hoadonban_khachhang">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="1" />
+    <End Role="Hoadonban" Type="Self.Hoadonban" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="Hoadonban">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONNHAP_NHACUNGCAP">
+    <End Role="Nhacungcap" Type="Self.Nhacungcap" Multiplicity="1" />
+    <End Role="HoaDonNhap" Type="Self.HoaDonNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhacungcap">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="HoaDonNhap">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WEBCAPHE3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Calamviec" EntityType="Self.Calamviec" />
+    <EntitySet Name="Chitietcalam" EntityType="Self.Chitietcalam" />
+    <EntitySet Name="douong" EntityType="Self.douong" />
+    <EntitySet Name="Hoadonban" EntityType="Self.Hoadonban" />
+    <EntitySet Name="HoaDonNhap" EntityType="Self.HoaDonNhap" />
+    <EntitySet Name="Khachhang" EntityType="Self.Khachhang" />
+    <EntitySet Name="Loaidouong" EntityType="Self.Loaidouong" />
+    <EntitySet Name="Nhacungcap" EntityType="Self.Nhacungcap" />
+    <EntitySet Name="Nhanvien" EntityType="Self.Nhanvien" />
+    <EntitySet Name="User_khach" EntityType="Self.User_khach" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="ChitietHDB" EntityType="Self.ChitietHDB" />
+    <EntitySet Name="ChiTietHDN" EntityType="Self.ChiTietHDN" />
+    <AssociationSet Name="FK_CHITIETCALAM_CALAM" Association="Self.FK_CHITIETCALAM_CALAM">
+      <End Role="Calamviec" EntitySet="Calamviec" />
+      <End Role="Chitietcalam" EntitySet="Chitietcalam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hoadonban_khachhang" Association="Self.FK_hoadonban_khachhang">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="Hoadonban" EntitySet="Hoadonban" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONNHAP_NHACUNGCAP" Association="Self.FK_HOADONNHAP_NHACUNGCAP">
+      <End Role="Nhacungcap" EntitySet="Nhacungcap" />
+      <End Role="HoaDonNhap" EntitySet="HoaDonNhap" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

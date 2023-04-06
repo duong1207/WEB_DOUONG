@@ -1,0 +1,11 @@
+﻿@using Auth.Models;
+@model List<Loaidouong>
+
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("ProductsByCategory","Product", new {@Maloai=item.Maloai})">@item.Tenloai</a></li>
+}
+
+
+
+

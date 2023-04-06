@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+@using Auth.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<douong>
+
+
+<div id="dispProducts"></div>
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $('document').ready(function () {
+        var str = '';
+        $.getJSON('/api/API_Product', function (data) {
+            $.each(data, function (key, val) {
+                key++;
+                str += '<div class="col-md-4 product-men">';
+                str += '<div class="product-shoe-info shoe">';
+                str += '<div class="men-pro-item">';
+                str += '<div class="men-thumb-item">';
+                str += '<img src = "/Acess/' + val.Anh + '" alt="">';
+                str += '<div class="men-cart-pro">';
+                str += '<div class="inner-men-cart-pro">';
+                str += '<a href="single.html" class="link-product-add-cart">Quick View</a>';
+                str += '</div>';
+                str += '</div>';
+                str += '<span class="product-new-top">New</span>';
+                str += '</div>';
+                str += '<div class="item-info-product">';
+                str += '<h4>';
+                str += '<a href="https://localhost:44345/Product/DetailsProduct/?Madouong='+val.Madouong+'">' + val.Tendouong + '</a>';
+                str += '</h4>'
+                str += '<div class="info-product-price">';
+                str += '<div class="grid_meta">';
+                str += '<div class="product_price">';
+                str += '<div class="grid-price ">';
+                str += '<a class="money ">' + val.dongiaban + '</a>';
+                str += '</div>';
+                str += '</div>';
+
+                str += '</div>';
+                str += '<div class="shoe single-item hvr-outline-out">';
+                str += '<form action="#" method="post">';
+                str += '<input type="hidden" name="cmd" value="_cart">';
+                str += '<input type="hidden" name="add" value="1">';
+                str += '<input type="hidden" name="shoe_item" value="Bella Toes">';
+                str += '<input type="hidden" name="amount" value="675.00">';
+                str += '<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>';
+
+                str += '<a href="#" data-toggle="modal" data-target="#myModal1"></a>';
+                str += '</form>';
+
+                str += '</div>';
+                str += '</div>';
+                str += '<div class="clearfix"></div>';
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+
+                if (key % 3 == 0) {
+                    str += '<div style="clear:both"></div>';
+                };
+            });
+
+            $("#dispProducts").html(str);
+        });
+
+    });
+
+</script>
+
+
+

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WEBCAPHE7ModelStoreContainer" CdmEntityContainer="WEBCAPHE3Entities">
+    <EntitySetMapping Name="Calamviecs">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.Calamviec">
+        <MappingFragment StoreEntitySet="Calamviec">
+          <ScalarProperty Name="Maca" ColumnName="Maca" />
+          <ScalarProperty Name="Tienca" ColumnName="Tienca" />
+          <ScalarProperty Name="TGbatdau" ColumnName="TGbatdau" />
+          <ScalarProperty Name="TGKThuc" ColumnName="TGKThuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chitietcalams">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.Chitietcalam">
+        <MappingFragment StoreEntitySet="Chitietcalam">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="Maca" ColumnName="Maca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="douongs">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.douong">
+        <MappingFragment StoreEntitySet="douong">
+          <ScalarProperty Name="Tendouong" ColumnName="Tendouong" />
+          <ScalarProperty Name="Madouong" ColumnName="Madouong" />
+          <ScalarProperty Name="dongiaban" ColumnName="dongiaban" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="Dongianhap" ColumnName="Dongianhap" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Trongluong" ColumnName="Trongluong" />
+          <ScalarProperty Name="Maloai" ColumnName="Maloai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hoadonbans">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.Hoadonban">
+        <MappingFragment StoreEntitySet="Hoadonban">
+          <ScalarProperty Name="SoHDB" ColumnName="SoHDB" />
+          <ScalarProperty Name="Ngayban" ColumnName="Ngayban" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDonNhaps">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.HoaDonNhap">
+        <MappingFragment StoreEntitySet="HoaDonNhap">
+          <ScalarProperty Name="SoHDN" ColumnName="SoHDN" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khachhangs">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.Khachhang">
+        <MappingFragment StoreEntitySet="Khachhang">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loaidouongs">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.Loaidouong">
+        <MappingFragment StoreEntitySet="Loaidouong">
+          <ScalarProperty Name="Maloai" ColumnName="Maloai" />
+          <ScalarProperty Name="Tenloai" ColumnName="Tenloai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nhacungcaps">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.Nhacungcap">
+        <MappingFragment StoreEntitySet="Nhacungcap">
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nhanviens">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.Nhanvien">
+        <MappingFragment StoreEntitySet="Nhanvien">
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_khach">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.User_khach">
+        <MappingFragment StoreEntitySet="User_khach">
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="passWord" ColumnName="passWord" />
+          <ScalarProperty Name="soDienThoai" ColumnName="soDienThoai" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChitietHDBs">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.ChitietHDB">
+        <MappingFragment StoreEntitySet="ChitietHDB">
+          <ScalarProperty Name="Khuyenmai" ColumnName="Khuyenmai" />
+          <ScalarProperty Name="SLB" ColumnName="SLB" />
+          <ScalarProperty Name="Madouong" ColumnName="Madouong" />
+          <ScalarProperty Name="SoHDB" ColumnName="SoHDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietHDNs">
+      <EntityTypeMapping TypeName="WEBCAPHE7Model.ChiTietHDN">
+        <MappingFragment StoreEntitySet="ChiTietHDN">
+          <ScalarProperty Name="SLNhap" ColumnName="SLNhap" />
+          <ScalarProperty Name="Madouong" ColumnName="Madouong" />
+          <ScalarProperty Name="SoHDN" ColumnName="SoHDN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

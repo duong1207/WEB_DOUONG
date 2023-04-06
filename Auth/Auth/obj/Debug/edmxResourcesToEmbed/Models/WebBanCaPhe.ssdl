@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEBCAPHE3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Calamviec">
+    <Key>
+      <PropertyRef Name="Maca" />
+    </Key>
+    <Property Name="Maca" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tienca" Type="float" />
+    <Property Name="TGbatdau" Type="time" Precision="7" />
+    <Property Name="TGKThuc" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Chitietcalam">
+    <Key>
+      <PropertyRef Name="MaNV" />
+      <PropertyRef Name="Maca" />
+    </Key>
+    <Property Name="MaNV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Maca" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WEBCAPHE8.dbo.ChitietHDB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ChitietHDB">
+    <Key>
+      <PropertyRef Name="Madouong" />
+      <PropertyRef Name="SoHDB" />
+    </Key>
+    <Property Name="Khuyenmai" Type="nvarchar" MaxLength="100" />
+    <Property Name="SLB" Type="int" />
+    <Property Name="Madouong" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SoHDB" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WEBCAPHE8.dbo.ChiTietHDN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ChiTietHDN">
+    <Key>
+      <PropertyRef Name="Madouong" />
+      <PropertyRef Name="SoHDN" />
+    </Key>
+    <Property Name="SLNhap" Type="int" />
+    <Property Name="Madouong" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SoHDN" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="douong">
+    <Key>
+      <PropertyRef Name="Madouong" />
+    </Key>
+    <Property Name="Tendouong" Type="nvarchar" MaxLength="250" />
+    <Property Name="Madouong" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="dongiaban" Type="float" />
+    <Property Name="Anh" Type="char" MaxLength="100" />
+    <Property Name="Dongianhap" Type="float" />
+    <Property Name="Mota" Type="nvarchar" MaxLength="250" />
+    <Property Name="Trongluong" Type="nvarchar" MaxLength="100" />
+    <Property Name="Maloai" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hoadonban">
+    <Key>
+      <PropertyRef Name="SoHDB" />
+    </Key>
+    <Property Name="SoHDB" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ngayban" Type="datetime" />
+    <Property Name="MaNV" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoaDonNhap">
+    <Key>
+      <PropertyRef Name="SoHDN" />
+    </Key>
+    <Property Name="SoHDN" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NgayNhap" Type="datetime" />
+    <Property Name="MaNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaNV" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Khachhang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="250" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="250" />
+    <Property Name="SDT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Loaidouong">
+    <Key>
+      <PropertyRef Name="Maloai" />
+    </Key>
+    <Property Name="Maloai" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tenloai" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Nhacungcap">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TenNCC" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Nhanvien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="TenNV" Type="nvarchar" MaxLength="250" />
+    <Property Name="MaNV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="GT" Type="nvarchar" MaxLength="250" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="Ngaysinh" Type="datetime" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="User_khach">
+    <Key>
+      <PropertyRef Name="taikhoan" />
+    </Key>
+    <Property Name="taikhoan" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="matkhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="passWord" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" />
+    <Property Name="access" Type="int" />
+  </EntityType>
+  <Association Name="FK_CHITIETCALAM_CALAM">
+    <End Role="Calamviec" Type="Self.Calamviec" Multiplicity="1" />
+    <End Role="Chitietcalam" Type="Self.Chitietcalam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Calamviec">
+        <PropertyRef Name="Maca" />
+      </Principal>
+      <Dependent Role="Chitietcalam">
+        <PropertyRef Name="Maca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hoadonban_khachhang">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="1" />
+    <End Role="Hoadonban" Type="Self.Hoadonban" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="Hoadonban">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONNHAP_NHACUNGCAP">
+    <End Role="Nhacungcap" Type="Self.Nhacungcap" Multiplicity="1" />
+    <End Role="HoaDonNhap" Type="Self.HoaDonNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhacungcap">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="HoaDonNhap">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WEBCAPHE3ModelStoreContainer">
+    <EntitySet Name="Calamviec" EntityType="Self.Calamviec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chitietcalam" EntityType="Self.Chitietcalam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="douong" EntityType="Self.douong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hoadonban" EntityType="Self.Hoadonban" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDonNhap" EntityType="Self.HoaDonNhap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khachhang" EntityType="Self.Khachhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loaidouong" EntityType="Self.Loaidouong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nhacungcap" EntityType="Self.Nhacungcap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nhanvien" EntityType="Self.Nhanvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_khach" EntityType="Self.User_khach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChitietHDB" EntityType="Self.ChitietHDB" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ChitietHDB].[Khuyenmai] AS [Khuyenmai], 
+    [ChitietHDB].[SLB] AS [SLB], 
+    [ChitietHDB].[Madouong] AS [Madouong], 
+    [ChitietHDB].[SoHDB] AS [SoHDB]
+    FROM [dbo].[ChitietHDB] AS [ChitietHDB]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ChiTietHDN" EntityType="Self.ChiTietHDN" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ChiTietHDN].[SLNhap] AS [SLNhap], 
+    [ChiTietHDN].[Madouong] AS [Madouong], 
+    [ChiTietHDN].[SoHDN] AS [SoHDN]
+    FROM [dbo].[ChiTietHDN] AS [ChiTietHDN]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CHITIETCALAM_CALAM" Association="Self.FK_CHITIETCALAM_CALAM">
+      <End Role="Calamviec" EntitySet="Calamviec" />
+      <End Role="Chitietcalam" EntitySet="Chitietcalam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hoadonban_khachhang" Association="Self.FK_hoadonban_khachhang">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="Hoadonban" EntitySet="Hoadonban" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONNHAP_NHACUNGCAP" Association="Self.FK_HOADONNHAP_NHACUNGCAP">
+      <End Role="Nhacungcap" EntitySet="Nhacungcap" />
+      <End Role="HoaDonNhap" EntitySet="HoaDonNhap" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
